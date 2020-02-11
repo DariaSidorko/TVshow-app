@@ -1,0 +1,16 @@
+.header {
+  background-color: #cccccc;
+  padding: 1.5%;
+  padding-left: 3%;
+  text-align: left;
+  color: white;
+  font-size: 22px;
+  font-family: Lato;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.search-bar{
+  float:right;
+  font-size: 20px;
+}

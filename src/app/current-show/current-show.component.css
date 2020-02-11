@@ -1,0 +1,35 @@
+.show-component{
+  font-family: Lato;
+}
+
+h1{
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.grid-container{
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  grid-gap: 10px;
+  padding: 0 20% 0 20%;
+}
+
+.item1{
+  grid-column: 1 / span 2;
+}
+.item2{
+  text-align: left;
+  padding: 0 5% 0 5%;
+}
+
+
+.show-img{
+  margin: 2%
+}
+
+.storyline{
+  padding-top: 25px;
+  margin-bottom: -5px;
+  text-transform: uppercase;
+ 
+}

@@ -1,16 +1,22 @@
-<div>
-  <div> 
-    <h1>{{current.name}}</h1>
-    <span>{{current.genres}} | {{current.language}} | {{current.country}} | {{current.raiting}}</span>
-  </div>
-  <img [src]='current.image' />
-  <div>
-    <span> {{current.showTime}} | {{current.network}} | {{current.runtime}}</span>
-  </div>
-  <div>
-    <span>{{current.summary}}</span>
-  </div>
-  <div>
-    <a [href]='current.officialSite' target="_blank">Official Site</a>
+<div class="show-component">
+  <h1>{{current.name}}</h1>
+  <div class="grid-container"> 
+    <div class="item1">
+      <img [src]='current.image' class="show-img"/>
+    </div>
+    <div class="item2">
+      <div> 
+        <span>{{current.genres}} | {{current.language}} | {{current.country}} | &#11088; {{current.raiting}} / 10</span>
+      </div>
+      
+      <div>
+        <span> {{current.network}} | {{current.showTime}} | {{current.runtime}} minutes</span>
+      </div>
+      <div class="storyline">Storyline:</div>
+      <p>{{current.summary}}</p>
+      <div>
+        <a [href]='current.officialSite' target="_blank">Official Site</a>
+      </div>
+    </div>
   </div>
 </div>
