@@ -1,1 +1,16 @@
-<p>current-show works!</p>
+<div>
+  <div> 
+    <h1>{{current.name}}</h1>
+    <span>{{current.genres}} | {{current.language}} | {{current.country}} | {{current.raiting}}</span>
+  </div>
+  <img [src]='current.image' />
+  <div>
+    <span> {{current.showTime}} | {{current.network}} | {{current.runtime}}</span>
+  </div>
+  <div>
+    <span>{{current.summary}}</span>
+  </div>
+  <div>
+    <a [href]='current.officialSite' target="_blank">Official Site</a>
+  </div>
+</div>
