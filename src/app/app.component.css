@@ -1,6 +1,6 @@
 .header {
   background-color: #cccccc;
-  padding: 1.5%;
+  padding: 0.5%;
   padding-left: 3%;
   text-align: left;
   color: white;
@@ -9,8 +9,14 @@
   font-weight: 600;
   text-transform: uppercase;
 }
+.tv-header{
+  font-family: 'Permanent Marker', cursive;
+  font-size: 33px;
+  margin: 0 5px 0 5px;
+}
 
 .search-bar{
   float:right;
   font-size: 20px;
+  padding-top: 1%;
 }

@@ -2,8 +2,10 @@ export interface ICurrentShow {
   name: string,
   language: string,
   genres: string,
+  status: string,
   officialSite: string,
   runtime: number,
+  premiered: string
   time: string,
   days: string,
   rating: number,

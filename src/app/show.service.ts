@@ -25,44 +25,20 @@ private transformToICurrentShow(data: ICurrentShowData) : ICurrentShow{
     name: data.name,
     language: data.language,
     genres: data.genres.join(", "),
+    status: data.status,
     officialSite: data.officialSite,
     runtime: data.runtime,
+    premiered: data.premiered.substring(0, 4),
     time: data.schedule.time,
     days: data.schedule.days.join(", "),
     rating: data.rating.average,
     network: data.network.name,
     country: data.network.country.code, 
     image: data.image.medium,
-    summary: data.summary
+    summary: data.summary.replace(/(<([^>]+)>)/ig,"")
   }
 }
 //.substring(3,(data.summary.length) - 4)
 
-
 }
 
-/* 
-name:'Girls',
-      name: string,
-    language: string,
-    genres: [string]
-    runtime: number,
-    officialSite: string,
-    schedule: {
-      time: string,
-      days: [string]
-    }
-    raiting: {
-      everage: number
-    }
-    network: {
-      name: string,
-      country: {
-        code: string
-      }
-    } //network -> name
-    image: {
-      medium: string
-    }
-    summary: string
-*/
