@@ -4,8 +4,9 @@ export interface ICurrentShow {
   genres: string,
   officialSite: string,
   runtime: number,
-  showTime: string,
-  raiting: number,
+  time: string,
+  days: string,
+  rating: number,
   network: string, //network -> name
   country: string, //country->code
   image: string,

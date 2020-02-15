@@ -3,6 +3,9 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { CurrentShowComponent } from './current-show/current-show.component';
+import { ShowService } from './show.service';
+import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -10,9 +13,10 @@ import { CurrentShowComponent } from './current-show/current-show.component';
     CurrentShowComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [ShowService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
