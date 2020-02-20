@@ -5,19 +5,21 @@ import { environment } from 'src/environments/environment';
 import { ICurrentShow } from './icurrent-show';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { IShowService } from './ishow-service';
 
 @Injectable({
   providedIn: 'root'
 })
-export class ShowService {
+export class ShowService implements IShowService{
 
   constructor (private httpClient: HttpClient) { }
 
-  getCurrentShow(show: string): Observable<ICurrentShow>{
+  getCurrentShow(search: string): Observable<ICurrentShow>{
     return this.httpClient.get<ICurrentShowData>(
-      `${environment.baseUrl}api.tvmaze.com/singlesearch/shows?q=${show}`
+      `${environment.baseUrl}api.tvmaze.com/singlesearch/shows?q=${search}`
       ).pipe(map(data => this.transformToICurrentShow(data)))
     }
+    
 // &appid=${environment.appId}
 private transformToICurrentShow(data: ICurrentShowData) : ICurrentShow{
   //console.log(data.show.schedule.time);

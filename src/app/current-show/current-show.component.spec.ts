@@ -1,6 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { CurrentShowComponent } from './current-show.component';
+import { ShowService } from '../show.service';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { ShowFakeService } from '../show-fake.service';
 
 describe('CurrentShowComponent', () => {
   let component: CurrentShowComponent;
@@ -8,7 +11,9 @@ describe('CurrentShowComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CurrentShowComponent ]
+      imports: [HttpClientTestingModule],
+      declarations: [ CurrentShowComponent ],
+      providers: [{ provide: ShowService, useClass:ShowFakeService }],
     })
     .compileComponents();
   }));

@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ICurrentShow } from '../icurrent-show';
+import { IShowService } from '../ishow-service';
 import { ShowService } from '../show.service';
+
+
 
 @Component({
   selector: 'app-current-show',
@@ -11,12 +14,13 @@ export class CurrentShowComponent implements OnInit {
   current: ICurrentShow;
   constructor(private showService: ShowService) {}
   
-  public show:boolean = true;
-  public status:any = 'Show';
 
   ngOnInit() {
     this.showService.getCurrentShow('Game+of+Thrones').subscribe(data => this.current = data);
   }
+
+
+
 
 
     

@@ -1,0 +1,9 @@
+<form class="search-input" style="background-color: transparent">
+  <mat-form-field appearance="outline">
+    <mat-icon  matPrefix >search</mat-icon>
+    <input matInput placeholder="Search for tv shows" area-lable="" [formControl]="search"/>
+    <mat-error *ngIf="search.invalid">
+      Type 2 or more characters
+    </mat-error>
+  </mat-form-field>
+</form>

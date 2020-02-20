@@ -1,10 +1,15 @@
 <div class="header">
-  <span>tv</span><span class="tv-header">show</span><span>search</span>
-  <span class="search-bar">***Search Bar***</span>
+   <!-- <span>tv</span><span class="tv-header">show</span><span>search</span>  -->
+  <app-show-search ></app-show-search>
 </div>
 <div style = "text-align:center;">
   
-  <h4>
+  <mat-card style="background-color: #0c151d; border-radius: 0; color: #b9b9b9; font-size: 15px;">
     <app-current-show></app-current-show>
-  </h4>
+  </mat-card>
+  <mat-card style="background-color: #0c151d; border-radius: 0; color: #989998;">
+    <app-cast>
+
+    </app-cast>
+  </mat-card>
 </div>

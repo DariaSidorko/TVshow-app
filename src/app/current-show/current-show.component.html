@@ -1,26 +1,32 @@
-<div class="show-component">
-  <div class="show-name">{{current?.name}}</div>
-  <div>
-    <span>{{current?.network}} | {{current?.country}} | {{current?.language}}  |  &#11088;  {{current?.rating}}</span>
-  </div>
+
+
+
+<div class="show-component" *ngIf="current">
+  
   <div class="grid-container"> 
     <div class="item1">
-      <img [src]='current?.image' class="show-img"/>
+      <img [src]='current.image' class="show-img"/>
     </div>
     <div class="item2">
-      
-      <div class="storyline">Storyline:</div>
-      <p>{{current?.summary}}</p>
+      <div class="show-name">{{current.name}}</div>
       <div>
-        <div>Genres: {{current?.genres}}</div>
+        <span>{{current.network}} | {{current.country}} | {{current.language}}  |  &#11088;  {{current.rating}}</span>
+      </div>
+      
+      <!-- <div class="storyline">Storyline:</div> -->
+      <p>{{current.summary}}</p>
+      <div>
+        <div>Genres: {{current.genres}}</div>
         <div>
-          <span> Premiered:  {{current?.premiered}} - {{current?.status}}</span>
+          <span> Premiered:  {{current.premiered}} - {{current.status}}</span>
         </div>
         <div>
-          <span> Sowtime:  {{current?.time}}, {{current?.days}} | {{current?.runtime}} minutes</span>
+          <span> Sowtime:  {{current.time}}, {{current.days}} | {{current.runtime}} minutes</span>
         </div>
-          <span>Official Site: </span><a class="official-site-link" [href]='current?.officialSite' target="_blank">{{current?.officialSite}}</a>
+          <span>Official Site: </span><a class="official-site-link" [href]='current?.officialSite' target="_blank">{{current.officialSite}}</a>
       </div>
     </div>
   </div>
 </div>
+
+

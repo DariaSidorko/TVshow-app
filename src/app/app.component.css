@@ -1,13 +1,13 @@
 .header {
-  background-color: #cccccc;
+  background-color: #162530;
   padding: 0.5%;
   padding-left: 3%;
-  text-align: left;
-  color: white;
-  font-size: 22px;
+  text-align: center;
+  color: #989998;
+  font-size: 15px;
   font-family: Lato;
   font-weight: 600;
-  text-transform: uppercase;
+  
 }
 .tv-header{
   font-family: 'Permanent Marker', cursive;
