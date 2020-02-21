@@ -1,1 +1,15 @@
-<p>front-page works!</p>
+<div class="show-component" *ngIf="frontPage">
+  
+  <div class="grid-container"> 
+    <div class="item1">
+      <a class="official-site-link" [href]='frontPage.officialSite' target="_blank"> <img [src]='frontPage.image' class="show-img"/> </a>
+
+      <div class="show-details">
+        <div class="show-name">{{frontPage.name}}</div>
+        <!-- <div>Network: {{frontPage.networkName}} </div> -->
+        <div> TIME:  {{frontPage.airtime}} </div>
+      </div>
+
+    </div>
+  </div>
+</div>
