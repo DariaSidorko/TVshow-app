@@ -15,3 +15,15 @@ export interface ICurrentShow {
   summary: string,
 }
 
+
+export interface IFrontPage {
+  name: string, //show -> name
+  type: string,
+  airtime: string, 
+  officialSite: string,
+  rating: number,
+  networkName: string,
+  imdb: string,
+  image: string //medium
+}
+

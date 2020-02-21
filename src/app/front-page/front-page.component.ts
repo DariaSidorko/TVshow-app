@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { IFrontPage } from '../ifront-page';
+import { IFrontPage } from '../icurrent-show';
+import { ShowService } from '../show.service';
 
 @Component({
   selector: 'app-front-page',
@@ -7,10 +8,18 @@ import { IFrontPage } from '../ifront-page';
   styleUrls: ['./front-page.component.css']
 })
 export class FrontPageComponent implements OnInit {
-  frontPage: IFrontPage
+  front: IFrontPage
+  constructor(private frontService: ShowService) {}
+  
+
+  ngOnInit() {
+    this.frontService.getFrontPageShows().subscribe(data => this.front = data);
+  }
+  /*
   constructor() {
     this.frontPage = {
       name: 'Rachael Ray', //show -> name
+      type: 'Talk Show',
       airtime: '11:00', 
       officialSite: 'http://www.rachaelrayshow.com/',
       rating: null,
@@ -22,6 +31,6 @@ export class FrontPageComponent implements OnInit {
   }
 
    ngOnInit(): void {}
-  
+*/  
 
 }

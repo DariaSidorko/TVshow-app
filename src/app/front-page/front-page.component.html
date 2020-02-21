@@ -1,13 +1,13 @@
-<div class="show-component" *ngIf="frontPage">
+<div class="show-component" *ngIf="front">
   
   <div class="grid-container"> 
     <div class="item1">
-      <a class="official-site-link" [href]='frontPage.officialSite' target="_blank"> <img [src]='frontPage.image' class="show-img"/> </a>
+      <a class="official-site-link" [href]='front.officialSite' target="_blank"> <img [src]='front.image' class="show-img"/> </a>
 
       <div class="show-details">
-        <div class="show-name">{{frontPage.name}}</div>
+        <div class="show-name">{{front.name}}</div>
         <!-- <div>Network: {{frontPage.networkName}} </div> -->
-        <div> TIME:  {{frontPage.airtime}} </div>
+        <div> TIME:  {{front.airtime}} </div>
       </div>
 
     </div>

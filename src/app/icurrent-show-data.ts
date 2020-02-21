@@ -26,3 +26,27 @@ export interface ICurrentShowData {
   
 }
 
+export interface IFrontPageData {
+  airtime: string, 
+  show: {
+    name: string, //show -> name
+    type: string
+    officialSite: string,
+    rating: {
+      everage: number,
+    }
+    network: {
+      name: string,
+    }
+    externals: {
+      imdb: string,
+    }
+    image: { 
+      medium: string //medium
+    }
+  }
+  
+  
+  
+}
+
