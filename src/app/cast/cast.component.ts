@@ -12,9 +12,9 @@ import { ShowService } from '../show.service';
 export class CastComponent implements OnInit {
   current: ICurrentShowCast[]
   
-  constructor(private showService: ShowService) {}
+  constructor(private currentService: ShowService) {}
 
   ngOnInit() {
-    this.showService.getCurrentShowCast('Game+of+Thrones').subscribe(data => this.current = data);
+    this.currentService.getCurrentShowCast('Game+of+Thrones').subscribe(data => this.current = data);
   }
 }

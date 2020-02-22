@@ -18,15 +18,4 @@ export class CurrentShowComponent implements OnInit {
   ngOnInit() {
     this.showService.getCurrentShow('Game+of+Thrones').subscribe(data => this.current = data);
   }
-
-
-
-
-
-    
-/*
-SHOW EPISODE LIST
-https://www.tvmaze.com/api#show-episode-list
-https://www.tvmaze.com/api#show-episode-list
-*/
 }
