@@ -22,8 +22,30 @@ export interface ICurrentShowData {
     image: {
       medium: string
     }
-    summary: string
-  
+    summary: string,
+}
+
+export interface ICurrentShowCastData {
+  _embedded: {
+    cast: [
+      {
+      person: {
+        name: string,
+        url: string,
+        image: {
+          medium: string
+        }
+      }
+      character: {
+        name: string,
+        url: string,
+        image: {
+          medium: string
+        }
+      }
+    }
+  ]
+ }
 }
 
 export interface IFrontPageData {
@@ -45,8 +67,5 @@ export interface IFrontPageData {
       medium: string //medium
     }
   }
-  
-  
-  
 }
 

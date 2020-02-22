@@ -1,1 +1,18 @@
-<h2 style="height: 300px; text-decoration: none">CAST</h2>
+<div class="show-component" *ngIf="current">
+  
+  <div class="grid-container"> 
+
+<div class="item1" *ngFor="let currents of current">
+  <div class="cast-header">Cast</div>
+  <div class="cast-member">
+  <img [src]='currents.castImage' class="show-img"/>
+  <div>
+    <a class="cast-link" [href]='currents.castURL' target="_blank">{{currents.castName}}</a>
+  </div>
+  <div>
+    <a class="character-link" [href]='currents.characterURL' target="_blank">{{currents.characterName}}</a>
+  </div>
+ </div>
+</div>
+</div>
+</div>

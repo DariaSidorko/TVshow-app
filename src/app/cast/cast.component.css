@@ -1,0 +1,50 @@
+.show-component {
+  font-family: Lato;
+  background-color: #0c151d; 
+}
+
+.cast-header {
+  text-transform: uppercase;
+  font-size: 22px;
+  font-weight: bold;
+  padding: 2% 0 1% 0;
+  color: #ffffff;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  grid-template-rows: auto auto;
+  grid-template-areas: 
+    "show show show show"
+    "cast cast cast cast";
+  grid-gap: 10px;
+  padding: 0 15% 5% 18%;
+}
+
+.item1 {
+  grid-column: 1 / span 2;
+  grid-area: cast;
+}
+
+.show-img {
+  margin: 2%
+}
+
+.cast-link {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.character-link {
+  text-decoration: none;
+  color: #81807e;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+a:hover {
+  color: rgb(255, 230, 142);
+}

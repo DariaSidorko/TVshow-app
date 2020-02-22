@@ -21,11 +21,29 @@
           <span> Premiered:  {{current.premiered}} - {{current.status}}</span>
         </div>
         <div>
-          <span> Sowtime:  {{current.time}}, {{current.days}} | {{current.runtime}} minutes</span>
+          <span> Showtime:  {{current.time}}, {{current.days}} | {{current.runtime}} minutes</span>
         </div>
           <span>Official Site: </span><a class="official-site-link" [href]='current?.officialSite' target="_blank">{{current.officialSite}}</a>
       </div>
     </div>
+    
+
+    
+    <!--
+    <div class="item3">
+      <div class="cast-header">Cast</div>
+      <div class="cast-member">
+      <img [src]='current.castImage' class="show-img"/>
+      <div>
+        <a class="official-site-link" [href]='current.castURL' target="_blank">{{current.castName}}</a>
+      </div>
+      <div>
+        <a class="official-site-link" [href]='current.characterURL' target="_blank">{{current.characterName}}</a>
+      </div>
+     </div>
+    </div>  -->
+
+
   </div>
 </div>
 

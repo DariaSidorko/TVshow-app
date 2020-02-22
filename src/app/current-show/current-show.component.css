@@ -6,7 +6,7 @@
 .show-name{
   text-transform: uppercase;
   font-size: 28px;
-  font-weight: 00;
+  font-weight: bold;
   padding: 0% 0 3% 0;
   color: #ffffff;
 }
@@ -14,18 +14,22 @@
 .grid-container{
   display: grid;
   grid-template-columns: auto auto auto auto;
+  grid-template-rows: [row1-start] auto [row1-end row2-start] auto [row2-end];
+  grid-template-areas: 
+    "show show show show"
+    "cast cast cast cast";
   grid-gap: 10px;
-  padding: 4% 15% 5% 18%;
+  padding: 4% 15% 0 18%;
 }
 
-.item1{
+.item1 {
   grid-column: 1 / span 2;
+  
 }
-.item2{
+.item2 {
   text-align: left;
-  padding: 0.5% 5% 0% 5%;
+  padding: 0.5% 5% 0 5%;
 }
-
 
 .show-img{
   margin: 2%

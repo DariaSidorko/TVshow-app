@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { ICurrentShowData, IFrontPageData } from './icurrent-show-data';
+import { ICurrentShowData, IFrontPageData, ICurrentShowCastData } from './icurrent-show-data';
 import { environment } from 'src/environments/environment';
-import { ICurrentShow } from './icurrent-show';
+import { ICurrentShow, ICurrentShowCast} from './icurrent-show';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { IShowService } from './ishow-service';
@@ -17,10 +17,9 @@ export class ShowService implements IShowService{
 
   getCurrentShow(search: string): Observable<ICurrentShow>{
     return this.httpClient.get<ICurrentShowData>(
-      `${environment.baseUrl}api.tvmaze.com/singlesearch/shows?q=${search}`
+      `${environment.baseUrl}api.tvmaze.com/singlesearch/shows?q=${search}&embed=cast`
       ).pipe(map(data => this.transformToICurrentShow(data)))
     }
-
 
   private transformToICurrentShow(data: ICurrentShowData) : ICurrentShow{
     return {
@@ -37,8 +36,30 @@ export class ShowService implements IShowService{
       network: data.network.name,
       country: data.network.country.code, 
       image: data.image.medium,
-      summary: data.summary.replace(/(<([^>]+)>)/ig,"")
+      summary: data.summary.replace(/(<([^>]+)>)/ig,""),
     }
+  }
+
+  getCurrentShowCast(search: string): Observable<ICurrentShowCast[]>{
+    return this.httpClient.get<ICurrentShowCastData[]>(
+     `${environment.baseUrl}api.tvmaze.com/singlesearch/shows?q=${search}&embed=cast`
+     ).pipe(map(data => this.transformToICurrentShowCast(data)))
+   } 
+
+  private transformToICurrentShowCast(data: ICurrentShowCastData[]): ICurrentShowCast[] {
+
+    let array = new Array()
+    for (let i = 0; i < data.length; i++){
+      array.push( new Object({
+        castName: data[i]._embedded.cast[i].person.name,
+        castURL: data[i]._embedded.cast[i].person.url,
+        castImage: data[i]._embedded.cast[i].person.image.medium,
+        characterName: data[i]._embedded.cast[i].character.name,
+        characterURL: data[i]._embedded.cast[i].character.url,
+        characterImage: data[i]._embedded.cast[i].character.image.medium
+      }))
+    }
+    return array;
   }
 
   getFrontPageShows(): Observable<IFrontPage>{
@@ -59,6 +80,4 @@ export class ShowService implements IShowService{
       image: data[0].show.image.medium//medium    
     }
   }
-
-
 }

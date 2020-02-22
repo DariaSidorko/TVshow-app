@@ -12,7 +12,16 @@ export interface ICurrentShow {
   network: string, //network -> name
   country: string, //country -> code
   image: string,
-  summary: string,
+  summary: string
+}
+
+export interface ICurrentShowCast {
+  castName: string,
+  castURL: string,
+  castImage: string,
+  characterName: string,
+  characterURL: string,
+  characterImage: string
 }
 
 

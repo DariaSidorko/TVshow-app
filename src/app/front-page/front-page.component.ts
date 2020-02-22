@@ -15,22 +15,4 @@ export class FrontPageComponent implements OnInit {
   ngOnInit() {
     this.frontService.getFrontPageShows().subscribe(data => this.front = data);
   }
-  /*
-  constructor() {
-    this.frontPage = {
-      name: 'Rachael Ray', //show -> name
-      type: 'Talk Show',
-      airtime: '11:00', 
-      officialSite: 'http://www.rachaelrayshow.com/',
-      rating: null,
-      networkName: 'Syndication',
-      imdb: 'tt0827947',
-      image: 'http://static.tvmaze.com/uploads/images/medium_portrait/32/80226.jpg' //medium
-   } as IFrontPage
-  
-  }
-
-   ngOnInit(): void {}
-*/  
-
 }
