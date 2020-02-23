@@ -52,20 +52,27 @@ export interface IFrontPageData {
   airtime: string, 
   show: {
     name: string, //show -> name
-    type: string
+    type: string,
     officialSite: string,
     rating: {
-      everage: number,
+      average: number
     }
-    network: {
-      name: string,
-    }
+   // webChannel: {
+  //    name: string,
+   // },  
     externals: {
-      imdb: string,
+      imdb: string
     }
     image: { 
       medium: string //medium
     }
   }
+<<<<<<< Updated upstream
+=======
+  
+
+  
+  
+>>>>>>> Stashed changes
 }
 

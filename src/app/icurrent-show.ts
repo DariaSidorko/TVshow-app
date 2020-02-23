@@ -26,12 +26,12 @@ export interface ICurrentShowCast {
 
 
 export interface IFrontPage {
+  airtime: string,
   name: string, //show -> name
-  type: string,
-  airtime: string, 
+  type: string, 
   officialSite: string,
   rating: number,
-  networkName: string,
+  //webChannel: string,
   imdb: string,
   image: string //medium
 }

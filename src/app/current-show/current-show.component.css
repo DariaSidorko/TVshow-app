@@ -6,8 +6,13 @@
 .show-name{
   text-transform: uppercase;
   font-size: 28px;
+<<<<<<< Updated upstream
   font-weight: bold;
   padding: 0% 0 3% 0;
+=======
+  font-weight: 600;
+  padding: 0 0 3% 0;
+>>>>>>> Stashed changes
   color: #ffffff;
 }
 

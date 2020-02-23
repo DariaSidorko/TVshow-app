@@ -1,15 +1,17 @@
 <div class="show-component" *ngIf="front">
   
   <div class="grid-container"> 
-    <div class="item1">
-      <a class="official-site-link" [href]='front.officialSite' target="_blank"> <img [src]='front.image' class="show-img"/> </a>
+    <div class="item1" *ngFor="let fronts of front" >
+      <div *ngIf="(fronts.type == 'News')">
+      <a class="official-site-link" [href]='fronts.officialSite' target="_blank"> <img [src]='fronts.image' class="show-img"/> </a>
 
       <div class="show-details">
-        <div class="show-name">{{front.name}}</div>
+        <div class="show-name">{{fronts.name}}</div>
         <!-- <div>Network: {{frontPage.networkName}} </div> -->
-        <div> TIME:  {{front.airtime}} </div>
+        <div> TIME:  {{fronts.airtime}} </div>
+        <div> Rating: {{fronts.rating}} </div>
       </div>
-
+    </div>
     </div>
   </div>
 </div>

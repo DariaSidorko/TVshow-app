@@ -21,6 +21,10 @@ input{
   left: 25px;
 }
 
+input:focus {
+  caret-color: #989998;
+}
+
 input select {
   width: 100%;
 }

@@ -1,10 +1,12 @@
 
+
 .grid-container{
   display: grid;
   grid-template-columns: auto auto auto auto;
   grid-gap: 10px;
   padding: 4% 15% 5% 18%;
 }
+
 
 .show-img{
   max-width: 150px;
