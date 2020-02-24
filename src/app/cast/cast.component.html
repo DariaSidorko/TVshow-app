@@ -5,13 +5,15 @@
 <div class="item1" *ngFor="let currents of current | slice:0:4">
   
   <div class="cast-member">
+  <div class="image-cropper">
   <img [src]='currents.castImage' class="show-img"/>
-  <div>
-    <a class="cast-link" [href]='currents.castURL' target="_blank">{{currents.castName}}</a>
   </div>
+    <div class="names">
+    <a class="cast-link" [href]='currents.castURL' target="_blank">{{currents.castName}}</a>
   <div>
     <a class="character-link" [href]='currents.characterURL' target="_blank">{{currents.characterName}}</a>
   </div>
+</div>
  </div>
 </div>
 </div>
