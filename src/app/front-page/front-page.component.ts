@@ -8,16 +8,35 @@ import { ShowService } from '../show.service';
   styleUrls: ['./front-page.component.css']
 })
 export class FrontPageComponent implements OnInit {
-  front = new Array();
-  talkShows: IFrontPage[]
+  news = new Array();
+  reality= new Array();
+  documentaries = new Array();
 
   constructor(private frontService: ShowService) {}
   
 
   ngOnInit() {
-    this.frontService.getFrontPageShows().subscribe(data => this.front = data);
-    
-    console.log(this.front);
+    this.frontService.getFrontPageShows().subscribe(data =>{
+      let newsCount = 0, realityCount = 0, documentaryCount  = 0;
+      /*
+      let dateTime = new Date();
+      let time =dateTime.toJSON();
+      */
+      for (let i = 0; i < data.length; i++){
+        if (data[i].type === 'News') {
+          this.news[newsCount] = data[i];
+          newsCount++;
+        }else if (data[i].type === 'Reality') {
+          this.reality[realityCount] = data[i];
+          realityCount++;
+        } else if (data[i].type === 'Documentary') {
+          this.documentaries[documentaryCount] = data[i];
+          documentaryCount++;
+        }
+      }
+
+    } );
+
 
     
     /* let counter = 0;
@@ -31,48 +50,4 @@ export class FrontPageComponent implements OnInit {
     } */
     
   }
-<<<<<<< Updated upstream
 }
-=======
-
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  /*
-  constructor() {
-    this.frontPage = {
-      name: 'Rachael Ray', //show -> name
-      type: 'Talk Show',
-      airtime: '11:00', 
-      officialSite: 'http://www.rachaelrayshow.com/',
-      rating: null,
-      networkName: 'Syndication',
-      imdb: 'tt0827947',
-      image: 'http://static.tvmaze.com/uploads/images/medium_portrait/32/80226.jpg' //medium
-   } as IFrontPage
-  
-  }
-
-   ngOnInit(): void {}
-*/  
->>>>>>> Stashed changes

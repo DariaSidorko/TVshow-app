@@ -50,6 +50,7 @@ export interface ICurrentShowCastData {
 
 export interface IFrontPageData {
   airtime: string, 
+  airstamp: string,
   show: {
     name: string, //show -> name
     type: string,
@@ -67,12 +68,5 @@ export interface IFrontPageData {
       medium: string //medium
     }
   }
-<<<<<<< Updated upstream
-=======
-  
-
-  
-  
->>>>>>> Stashed changes
 }
 

@@ -1,25 +1,41 @@
 
+.show-component{
+  padding: 0 15% 0 18%;
+}
+
+.shows-title{
+  font-family: Lato;
+  text-align: left;
+  font-size: 28px;
+  font-weight: bold;
+  padding: 2% 0 2% 0;
+  font-weight: 600;
+  color: #ffffff;
+}
 
 .grid-container{
   display: grid;
-  grid-template-columns: auto auto auto auto;
-  grid-gap: 10px;
-  padding: 4% 15% 5% 18%;
+  grid-template-columns: auto auto auto auto auto auto;
+  grid-gap: 5px;
+  padding: 2% 0 2% 0;
+
 }
 
 
 .show-img{
-  max-width: 150px;
+  max-width: 140px;
 }
 
 .item1{
-  max-width: 150px; 
+  max-width: 140px; 
   text-align: left;
   background-color: rgba(255,255,255, 0.08);
   border-radius: 5px;
+  margin: 10px;
 }
 
 .show-details{
   padding: 5px 0 15px 10px;
   padding-bottom: 15px;
 }
+

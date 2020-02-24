@@ -2,6 +2,10 @@ body {
   color: #ffffff;
 }
 
+.wrapper{
+  font-family: Lato;
+}
+
 .header {
   background-color: #162530;
   padding: 0.5%;

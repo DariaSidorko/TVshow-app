@@ -64,19 +64,22 @@ export class ShowService implements IShowService{
   }
 
   getFrontPageShows(): Observable<IFrontPage[]>{
+    
     return this.httpClient.get<IFrontPageData[]>(
       `${environment.baseUrl}api.tvmaze.com/schedule`
       ).pipe(map(data => this.transformToIFrontPage(data)))
+
     }
 
   private transformToIFrontPage(data: IFrontPageData[]) : IFrontPage[] {  
     //console.log(data[0].show.webChannel.name);
-    let array =new Array();
+    let array = new Array();
     for (let i = 0; i < data.length; i++){
       array.push( new Object({
         name: data[i].show.name, //show -> name
         type: data[i].show.type,
-        airtime: data[i].airtime, 
+        airtime: data[i].airtime,
+        airstamp: data[i].airstamp, 
         officialSite: data[i].show.officialSite,
         rating: data[i].show.rating.average,
         //webChannel: data[i].show.webChannel.name,
@@ -85,7 +88,7 @@ export class ShowService implements IShowService{
       }))
     }
 
-    array.sort((a, b) => a.rating > b.rating ? -1 : a.rating < b.rating ? 1 : 0);
+    array.sort((a, b) => a.time > b.time ? -1 : a.time < b.time ? 1 : 0);
 
     return array 
     

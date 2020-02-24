@@ -27,6 +27,7 @@ export interface ICurrentShowCast {
 
 export interface IFrontPage {
   airtime: string,
+  airstamp: string,
   name: string, //show -> name
   type: string, 
   officialSite: string,
