@@ -1,4 +1,4 @@
-<div class="wrapper">
+
   <div class="header">
     <!-- <span>tv</span><span class="tv-header">show</span><span>search</span>  -->
     <app-show-search (searchEvent)="doSearch($event)"></app-show-search>
@@ -6,7 +6,7 @@
   <div style = "text-align:center;">
     
     <mat-card style="background-color: #0c151d; border-radius: 0; color: #f4f4f4; font-size: 15px;">
-      <app-current-show [current]="currentShow"></app-current-show>
+      <app-current-show [currents]="currentShow"></app-current-show>
 
       <app-cast></app-cast>
     </mat-card>
@@ -20,4 +20,3 @@
     
     
   </div>
-</div>

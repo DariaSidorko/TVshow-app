@@ -10,7 +10,7 @@ import { ShowService } from './show.service';
 export class AppComponent {
   title = 'TVshow-app';
 
-  currentShow: ICurrentShow;
+  currentShow: ICurrentShow[];
 
   constructor(private showService: ShowService){}
 
