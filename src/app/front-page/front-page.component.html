@@ -1,6 +1,7 @@
 <div class="show-component">
   
   <div class="shows-title"> Today's News</div>
+  <hr class="line">
   <div class="grid-container"  *ngIf="news"> 
     <div class="item1" *ngFor="let new of news | slice:0:5" >
       <a class="official-site-link" [href]='new.officialSite' target="_blank"> <img [src]='new.image' class="show-img"/> </a>
@@ -12,7 +13,8 @@
     </div>
   </div>
 
-  <div class="shows-title"> Today's Realyty Shows</div>
+  <div class="shows-title"> Today's Reality Shows</div>
+  <hr class="line">
   <div class="grid-container"  *ngIf="reality"> 
     <div class="item1" *ngFor="let real of reality | slice:0:5" >
       <a class="official-site-link" [href]='real.officialSite' target="_blank"> <img [src]='real.image' class="show-img"/> </a>
@@ -24,7 +26,8 @@
     </div>
   </div>
 
-  <div class="shows-title"> Todays Documentary Shows</div>
+  <div class="shows-title"> Today's Documentary Shows</div>
+  <hr class="line">
   <div class="grid-container"  *ngIf="documentaries"> 
     <div class="item1" *ngFor="let documentary of documentaries | slice:0:5" >
       <a class="official-site-link" [href]='documentary.officialSite' target="_blank"> <img [src]='documentary.image' class="show-img"/> </a>

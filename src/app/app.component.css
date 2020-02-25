@@ -2,14 +2,9 @@ body {
   color: #ffffff;
 }
 
-.wrapper{
-  font-family: Lato;
-}
-
 .header {
   background-color: #162530;
   padding: 0.5%;
-  padding-left: 3%;
   text-align: center;
   color: #989998;
   font-size: 15px;
@@ -27,4 +22,8 @@ body {
   float:right;
   font-size: 20px;
   padding-top: 1%;
+}
+
+.mat-card {
+  padding: 10px;
 }
