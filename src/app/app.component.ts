@@ -11,6 +11,8 @@ export class AppComponent {
   title = 'TVshow-app';
 
   currentShow: ICurrentShow[];
+  //public showDetails = "";
+
 
   constructor(private showService: ShowService){}
 
