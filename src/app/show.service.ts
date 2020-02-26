@@ -25,14 +25,15 @@ export class ShowService implements IShowService{
 
   private transformToICurrentShow(data: ICurrentShowData[]) : ICurrentShow[]{
     
-    console.log(data);
+    //console.log(data);
     
     let array = new Array();
     for (let i = 0; i < data.length; i++){
-      console.log(i); 
-      console.log(data[i]); 
+      //console.log(i); 
+      //console.log(data[i]); 
 
       array.push( new Object({
+        id: data[i].show.id,
         name: data[i].show.name,
         language: data[i].show.language,
         genres: data[i].show.genres, //.join(", "),

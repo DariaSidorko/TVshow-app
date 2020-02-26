@@ -8,6 +8,8 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
+import { MatDialogModule } from '@angular/material/dialog';
+
 import 'hammerjs';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -25,7 +27,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     FormsModule,
     ReactiveFormsModule,
     MatFormFieldModule,
-    MatIconModule 
+    MatIconModule,
+    MatDialogModule  
   ],
   exports: [
     BrowserAnimationsModule,
@@ -36,7 +39,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     FormsModule,
     ReactiveFormsModule,
     MatFormFieldModule,
-    MatIconModule   
+    MatIconModule,
+    MatDialogModule    
   ]
 })
 export class MaterialDesignModule { }

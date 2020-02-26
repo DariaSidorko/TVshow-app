@@ -1,4 +1,5 @@
 export interface ICurrentShow {
+  is: number,
   name: string,
   language: string,
   genres: string,

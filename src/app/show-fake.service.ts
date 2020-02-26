@@ -34,6 +34,7 @@ export class ShowFakeService implements IShowService{
     let array = new Array();
     for (let i = 0; i < 2; i++){
       array.push( new Object({
+        id: 139,
         name: 'Girls',
         language: 'English',
         genres: 'Drama',

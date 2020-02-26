@@ -1,5 +1,6 @@
 export interface ICurrentShowData {
-    show: {      
+    show: { 
+      id: number,
       name: string,
       language: string,
       genres: [string],
