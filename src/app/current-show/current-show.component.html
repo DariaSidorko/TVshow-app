@@ -1,20 +1,28 @@
 
-<div class="show-component"  ng-app="app" ng-controller="controllerName">
- 
-  <div class="grid-container" *ngIf="currents"> 
-    <div class="item1" *ngFor="let current of currents | slice:0:5" >
-      <a class="official-site-link" (click) = "fireEvent(current)"> <img [src]='current.image' class="show-img"/> </a>
-      <div class="show-details">
-        <div class="show-name">{{current.name}}</div>
-        <!-- <div>Network: {{frontPage.networkName}} </div> 
-        | slice:0:3 
-        ng-click="passCurrent($current)"-->
-        <div> TIME:  {{current.runtime}} </div>
+<div  class="show-component"  ng-app="app" ng-controller="controllerName" *ngIf="currents">
+  
+  <div class="search-result-card">
+    <div class="shows-title"> Search Result:</div>
+    <hr class="line">
+    <div class="grid-container"> 
+      <div class="item1" *ngFor="let current of currents | slice:0:5" >
+        <a class="official-site-link" (click) = "fireEvent(current)" (click)="toggleShow()"> <img [src]='current.image' class="show-img"/> </a>
+        <!-- <div class="show-details">
+          <div class="show-name">{{current.name}}</div>
+           <div>Network: {{frontPage.networkName}} </div> 
+          | slice:0:3 
+          ng-click="passCurrent($current)"
+          <div> TIME:  {{current.runtime}} </div>
+        </div> -->
+    
       </div>
-   
-    </div>
-  </div>
-
+  </div> 
+</div>   
+ 
+<div class="show-details-card" *ngIf="show">
+  <!-- <img class="close-button" src="../../assets/cross-out.png" alt="Clossing Cross" (click)="toggleHide()"img>  -->
+  
+  <a class="material-icons close-button" (click)="toggleHide()">close</a>
    <div class="grid-container"  *ngIf="details"> 
     <div class="item1-details">
       <img [src]='details.image' class="show-img-details"/>
@@ -22,23 +30,29 @@
     <div class="item2-details">
       <div class="show-name-details">{{details.name}}</div>
       <div>
-        <span>{{details.network}} | {{details.country}} | {{details.language}}  |  &#11088;  {{details.rating}}</span>
+        <span class="show-details-span" *ngIf="details.network">{{details.network}} </span> <span class="show-details-span" *ngIf="details.network && details.country">|</span> 
+        <span class="show-details-span" *ngIf="details.country"> {{details.country}}</span> <span class="show-details-span" *ngIf="details.country && details.language">|</span> 
+        <span class="show-details-span" *ngIf="details.language">{{details.language}}</span>  <span class="show-details-span" *ngIf="details.language && details.rating">|</span>  
+        <span class="show-details-span" *ngIf="details.rating"><i class="material-icons rating-star">star</i>  {{details.rating}}</span>
+      </div>
+
+      <div class="show-details-div">{{details.genres}}</div>
+
+      <div class="show-details-div">
+        <span class="show-details-span"> {{details.premiered}} - {{details.status}}</span><span class="show-details-span" *ngIf="details.status == 'Running'">|</span> 
+          <span *ngIf="details.status == 'Running'">
+          <span class="show-details-span"> {{details.days}}</span> <span class="show-details-span" *ngIf="details.days && details.time">|</span> 
+          <span class="show-details-span">{{details.time}}</span> <span class="show-details-span" *ngIf="details.time && details.runtime">|</span> 
+          <span class="show-details-span">{{details.runtime}} min</span>
+        </span>
       </div>
       
-      <p>{{details.summary}}</p>
+      <p class="show-summary">{{details.summary}}</p>
       <div>
-        <div>Genres: {{details.genres}}</div>
-        <div>
-          <span> Premiered:  {{details.premiered}} - {{details.status}}</span>
-        </div>
-        <div>
-          <span> Showtime:  {{details.time}}, {{details.days}} | {{details.runtime}} minutes</span>
-        </div>
-          <span>Official Site: </span><a class="official-site-link" [href]='details.officialSite' target="_blank">{{details.officialSite}}</a> 
+          <span>Official Site: </span><a class="official-site-link" [href]='details.officialSite' target="_blank">{{details.name}}</a> 
       </div>
     </div>  
   </div> 
-
 
 
   <div class="grid-container"  *ngIf="cast">
@@ -62,7 +76,7 @@
 
 </div>
 
-
+</div>
   
 <!--
   <div class="item3">

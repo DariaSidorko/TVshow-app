@@ -33,8 +33,11 @@ export interface IFrontPage {
   type: string, 
   officialSite: string,
   rating: number,
-  //webChannel: string,
   imdb: string,
   image: string //medium
+  season: number,
+  runtime: number,
+  summary: string,
+  genres: string
 }
 

@@ -19,10 +19,9 @@ export class ShowSearchComponent implements OnInit {
       (searchValue: string) => {
       if (!this.search.invalid && searchValue){
         this.searchEvent.emit(searchValue)
+        console.log("true")
       }
     })
   }
-
- 
 
 }
