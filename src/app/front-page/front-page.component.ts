@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { IFrontPage } from '../icurrent-show';
 import { ShowService } from '../show.service';
+import { IFrontPage } from '../icurrent-show';
+
 
 @Component({
   selector: 'app-front-page',
@@ -8,12 +9,16 @@ import { ShowService } from '../show.service';
   styleUrls: ['./front-page.component.css']
 })
 export class FrontPageComponent implements OnInit {
+  
   news = new Array();
   reality= new Array();
   documentaries = new Array();
 
+  details: IFrontPage;
+
   constructor(private frontService: ShowService) {}
   
+
 
   ngOnInit() {
     this.frontService.getFrontPageShows().subscribe(data =>{
@@ -35,19 +40,22 @@ export class FrontPageComponent implements OnInit {
         }
       }
 
+      //array.sort((a, b) => a.time > b.time ? -1 : a.time < b.time ? 1 : 0);
+
     } );
-
-
-    
-    /* let counter = 0;
-    console.log(this.front);
-    for (let i = 0; i < this.front.length; i++){
-      if (this.front[i].type = "Talk Show") { 
-        this.talkShows.push()
-        counter=+1
-      }  
-      (counter = 3) ? stop : undefined;
-    } */
-    
   }
+
+  fireEvent(showDetails){
+    this.details = showDetails;
+  }
+
+  show = false;
+    toggleShowNews(){this.show == false ? this.show = true : undefined}
+    toggleHideNews(){this.show == true ? this.show = false : undefined}
+
+    toggleShowReality(){this.show == false ? this.show = true : undefined}
+    toggleHideReality(){this.show == true ? this.show = false : undefined}
+
+    toggleShowDocumentary(){this.show == false ? this.show = true : undefined}
+    toggleHideDocumentary(){this.show == true ? this.show = false : undefined}
 }

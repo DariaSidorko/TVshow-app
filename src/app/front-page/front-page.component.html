@@ -4,41 +4,120 @@
   <hr class="line">
   <div class="grid-container"  *ngIf="news"> 
     <div class="item1" *ngFor="let new of news | slice:0:5" >
-      <a class="official-site-link" [href]='new.officialSite' target="_blank"> <img [src]='new.image' class="show-img"/> </a>
-      <div class="show-details">
-        <div class="show-name">{{new.name}}</div>
-        <!-- <div>Network: {{frontPage.networkName}} </div> -->
-        <div> TIME:  {{new.airtime}} </div>
+      <div class="show-container">
+        <a class="official-site-link" (click) = "fireEvent(new)" (click)="toggleShowNews()"> <img [src]='new.image' class="show-img"/> </a>
+        <!-- <div class="show-details">
+          <div class="show-name">{{new.name}}</div>
+           <div>Network: {{frontPage.networkName}} </div>
+          <div> TIME:  {{new.airtime}} </div>
+        </div> -->
       </div>
     </div>
   </div>
+
+  <div class="show-details-card" *ngIf="show && details.type == 'News'">
+    <!-- <img class="close-button" src="../../assets/cross-out.png" alt="Clossing Cross" (click)="toggleHide()"img>  -->
+    <a class="material-icons close-button" (click)="toggleHideNews()">close</a>
+     <div class="grid-container"  *ngIf="details"> 
+      <div class="item1-details">
+        <img [src]='details.image' class="show-img-details"/>
+      </div>
+      <div class="item2-details">
+        <div class="show-name-details">{{details.name}}</div>
+       
+        <!-- <p>{{details.summary}}</p> -->
+        <div>
+          <span *ngIf="details.genres" class="show-details-span">{{details.genres}}</span><span *ngIf="details.genres && details.rating" class="show-details-span">|</span> 
+          <span *ngIf="details.rating" class="show-details-span"> <i class="material-icons rating-star">star</i>{{details.rating}}</span>
+
+          <div class="show-details-div"> <span class="show-details-span">{{details.airtime}} </span> <span class="show-details-span">|</span> <span class="show-details-span"> {{details.runtime}} min</span></div>  
+
+          <p class="show-summary">{{details.summary}}</p>
+            
+            <span>Official Site: </span><a class="official-site-link" [href]='details.officialSite' target="_blank">{{details.name}}</a> 
+        </div>
+      </div>  
+    </div> 
+  </div>
+
 
   <div class="shows-title"> Today's Reality Shows</div>
   <hr class="line">
   <div class="grid-container"  *ngIf="reality"> 
     <div class="item1" *ngFor="let real of reality | slice:0:5" >
-      <a class="official-site-link" [href]='real.officialSite' target="_blank"> <img [src]='real.image' class="show-img"/> </a>
-      <div class="show-details">
+      <a class="official-site-link" (click) = "fireEvent(real)" (click)="toggleShowReality()"> <img [src]='real.image' class="show-img"/> </a>
+      <!-- <div class="show-details">
         <div class="show-name">{{real.name}}</div>
-        <!-- <div>Network: {{frontPage.networkName}} </div> -->
         <div> TIME:  {{real.airtime}} </div>
-      </div>
+      </div> -->
     </div>
+  </div>
+
+  <div class="show-details-card" *ngIf="show && details.type == 'Reality'">
+    <!-- <img class="close-button" src="../../assets/cross-out.png" alt="Clossing Cross" (click)="toggleHide()"img>  -->
+    <a class="material-icons close-button" (click)="toggleHideReality()">close</a>
+     <div class="grid-container"  *ngIf="details"> 
+      <div class="item1-details">
+        <img [src]='details.image' class="show-img-details"/>
+      </div>
+      <div class="item2-details">
+        <div class="show-name-details">{{details.name}}</div>
+       
+        <!-- <p>{{details.summary}}</p> -->
+        <div>
+          <span *ngIf="details.genres" class="show-details-span">{{details.genres}}</span><span *ngIf="details.genres && details.rating" class="show-details-span">|</span> 
+          <span *ngIf="details.rating" class="show-details-span"> <i class="material-icons rating-star">star</i>{{details.rating}}</span>
+ 
+          <div class="show-details-div"> <span class="show-details-span">{{details.airtime}} </span> <span class="show-details-span">|</span> <span class="show-details-span"> {{details.runtime}} min</span></div>  
+
+          <div class="show-details-div">Season:  {{details.season}}</div> 
+          
+          <p class="show-summary">{{details.summary}}</p>
+            
+            <span>Official Site: </span><a class="official-site-link" [href]='details.officialSite' target="_blank">{{details.name}}</a> 
+        </div>
+      </div>  
+    </div> 
   </div>
 
   <div class="shows-title"> Today's Documentary Shows</div>
   <hr class="line">
   <div class="grid-container"  *ngIf="documentaries"> 
     <div class="item1" *ngFor="let documentary of documentaries | slice:0:5" >
-      <a class="official-site-link" [href]='documentary.officialSite' target="_blank"> <img [src]='documentary.image' class="show-img"/> </a>
-      <div class="show-details">
+      <a class="official-site-link" (click) = "fireEvent(documentary)" (click)="toggleShowDocumentary()"> <img [src]='documentary.image' class="show-img"/> </a>
+      <!-- <div class="show-details">
         <div class="show-name">{{documentary.name}}</div>
-        <!-- <div>Network: {{frontPage.networkName}} </div> -->
+         <div>Network: {{frontPage.networkName}} </div>
         <div> TIME:  {{documentary.airtime}} </div>
-      </div>
+      </div> -->
     </div>
   </div>
 
-</div>
+  <div class="show-details-card" *ngIf="show && details.type == 'Documentary'">
+    <!-- <img class="close-button" src="../../assets/cross-out.png" alt="Clossing Cross" (click)="toggleHide()"img>  -->
+    <a class="material-icons close-button" (click)="toggleHideDocumentary()">close</a>
+     <div class="grid-container"  *ngIf="details"> 
+      <div class="item1-details">
+        <img [src]='details.image' class="show-img-details"/>
+      </div>
+      <div class="item2-details">
+        <div class="show-name-details">{{details.name}}</div>
+       
+        <!-- <p>{{details.summary}}</p> -->
+        <div>
+          <span *ngIf="details.genres" class="show-details-span">{{details.genres}}</span><span *ngIf="details.genres  && details.rating" class="show-details-span">|</span> 
+          <span *ngIf="details.rating" class="show-details-span"> <i class="material-icons rating-star">star</i>{{details.rating}}</span>
 
-<!--  *ngIf="(fronts.type == 'News')" -->
+          <div class="show-details-div"> <span class="show-details-span">{{details.airtime}} </span> <span class="show-details-span">|</span> <span class="show-details-span"> {{details.runtime}} min</span></div>  
+          
+          <div class="show-details-div">Season:  {{details.season}}</div>  
+
+          <p class="show-summary">{{details.summary}}</p>
+            
+            <span>Official Site: </span><a class="official-site-link" [href]='details.officialSite' target="_blank">{{details.name}}</a> 
+        </div>
+      </div>  
+    </div> 
+  </div>
+
+</div>

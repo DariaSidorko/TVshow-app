@@ -54,10 +54,13 @@ export interface ICurrentShowCastData {
 export interface IFrontPageData {
   airtime: string, 
   airstamp: string,
+  season: number,
+  runtime: number,
   show: {
     name: string, //show -> name
     type: string,
     officialSite: string,
+    genres: [string],
     rating: {
       average: number
     }
@@ -70,6 +73,7 @@ export interface IFrontPageData {
     image: { 
       medium: string //medium
     }
+    summary: string,
   }
 }
 

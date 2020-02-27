@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Output } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ICurrentShowData, IFrontPageData, ICurrentShowCastData } from './icurrent-show-data';
 import { environment } from 'src/environments/environment';
@@ -7,12 +7,13 @@ import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { IShowService } from './ishow-service';
 import { IFrontPage } from './icurrent-show';
+import { EventEmitter } from 'protractor';
+import { TypeScriptEmitter } from '@angular/compiler';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ShowService implements IShowService{
-
   constructor (private httpClient: HttpClient) { }
 
   getCurrentShow(search: string): Observable<ICurrentShow[]>{
@@ -36,7 +37,7 @@ export class ShowService implements IShowService{
         id: data[i].show.id,
         name: data[i].show.name,
         language: data[i].show.language,
-        genres: data[i].show.genres, //.join(", "),
+        genres: data[i].show.genres.join(", "), //.join(", "),
         status: data[i].show.status,
         officialSite: data[i].show.officialSite,
         runtime: data[i].show.runtime,
@@ -88,23 +89,29 @@ export class ShowService implements IShowService{
   private transformToIFrontPage(data: IFrontPageData[]) : IFrontPage[] {  
     //console.log(data[0].show.webChannel.name);
     let array = new Array();
+    
     for (let i = 0; i < data.length; i++){
       array.push( new Object({
+        season: data[i].season,
+        runtime: data[i].runtime,
         name: data[i].show.name, //show -> name
+        genres: data[i].show.genres.join(", "),
         type: data[i].show.type,
         airtime: data[i].airtime,
         airstamp: data[i].airstamp, 
         officialSite: (data[i].show.officialSite === null) ? `https://www.imdb.com/title/${data[i].show.externals.imdb}/` : data[i].show.officialSite,
         rating: data[i].show.rating ? data[i].show.rating.average : "",
-        //webChannel: data[i].show.webChannel.name,
         imdb: data[i].show.externals ? data[i].show.externals.imdb : "",
         image: data[i].show.image ? data[i].show.image.medium : "../../assets/image-coming-soon.jpg",//medium    
+        summary: data[i].show.summary ? data[i].show.summary.replace(/(<([^>]+)>)/ig,"") : ""
       }))
     }
 
-    array.sort((a, b) => a.time > b.time ? -1 : a.time < b.time ? 1 : 0);
+    array.sort((a, b) => a.rating > b.rating ? -1 : a.rating < b.rating ? 1 : 0);
 
     return array 
     
   }
+
+ 
 }

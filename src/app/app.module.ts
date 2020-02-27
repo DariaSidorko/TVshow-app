@@ -12,6 +12,8 @@ import { FrontPageComponent } from './front-page/front-page.component';
 
 
 
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,4 +29,5 @@ import { FrontPageComponent } from './front-page/front-page.component';
   providers: [ShowService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
+

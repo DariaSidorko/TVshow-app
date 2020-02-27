@@ -1,18 +1,18 @@
 
   <div class="header">
     <!-- <span>tv</span><span class="tv-header">show</span><span>search</span>  -->
-    <app-show-search (searchEvent)="doSearch($event)"></app-show-search>
+    <app-show-search (searchEvent)="doSearch($event)" ></app-show-search>
   </div>
-  <div style = "text-align:center;">
 
-    <mat-card style="background-color: #0c151d; border-radius: 0; color: #f4f4f4; font-size: 15px;">
-      <app-current-show [currents]="currentShow" ></app-current-show>
+
+  <div style = "text-align:center;" >
+
+    <mat-card  style="background-color: #0c151d; border-radius: 0; color: #f4f4f4; font-size: 15px;">
+      <app-current-show [currents]="currentShow"></app-current-show>
     </mat-card>
 
     <mat-card style="background-color: #0c151d; border-radius: 0; color: #989998;">
-      <app-front-page>
-
-      </app-front-page>
+      <app-front-page></app-front-page>
     </mat-card>
     
     

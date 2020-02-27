@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ICurrentShow } from './icurrent-show';
 import { ShowService } from './show.service';
 
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -11,7 +12,7 @@ export class AppComponent {
   title = 'TVshow-app';
 
   currentShow: ICurrentShow[];
-  //public showDetails = "";
+
 
 
   constructor(private showService: ShowService){}
@@ -22,4 +23,5 @@ export class AppComponent {
       searchValue.length > 1 ? searchValue : undefined). 
       subscribe(data => this.currentShow = data); 
   }
+
 }
