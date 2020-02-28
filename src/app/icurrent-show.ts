@@ -25,6 +25,16 @@ export interface ICurrentShowCast {
   characterImage: string
 }
 
+export interface ICurrentShowEpisodes {
+  number: number,
+  name: string,
+  episodeOrder: number,
+  premiereDate: string,
+  endDate: string  
+}
+
+
+
 
 export interface IFrontPage {
   airtime: string,

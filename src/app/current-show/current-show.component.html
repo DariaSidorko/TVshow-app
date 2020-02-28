@@ -2,8 +2,8 @@
 <div  class="show-component"  ng-app="app" ng-controller="controllerName" *ngIf="currents">
   
   <div class="search-result-card">
-    <div class="shows-title"> Search Result:</div>
-    <hr class="line">
+    <!-- <div class="shows-title"> Search Result:</div>
+    <hr> -->
     <div class="grid-container"> 
       <div class="item1" *ngFor="let current of currents | slice:0:5" >
         <a class="official-site-link" (click) = "fireEvent(current)" (click)="toggleShow()"> <img [src]='current.image' class="show-img"/> </a>
@@ -55,8 +55,10 @@
   </div> 
 
 
+  <div class="shows-title"> Cast:</div>
+  <hr class="line">
   <div class="grid-container"  *ngIf="cast">
-    <div class="cast-header">Cast</div>
+    
       <div class="grid-container-cast"> 
   
         <div class="item1-cast" *ngFor="let member of cast | slice:0:4">
@@ -71,6 +73,19 @@
           </div>
         </div>
       </div>
+    </div>
+  </div>
+
+  <div *ngIf="seasons">
+    <div class="shows-title">Seasons:</div>
+    <hr class="line">
+    <div *ngFor="let season of seasons" class="seasons-wrapper">
+      <div class="seasons-container">
+        <div style="flex-basis:20%" >Season {{season.number}}</div>
+        <div style="flex-basis:20%" >{{season.episodeOrder}} <span *ngIf="season.episodeOrder != '-'">episodes</span></div>
+        <div style="flex-basis:20%">{{season.premiereDate}} - {{season.endDate}}</div>
+      </div>
+      <hr class="seasons-line">
     </div>
   </div>
 

@@ -1,14 +1,13 @@
-import { Injectable, Output } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { ICurrentShowData, IFrontPageData, ICurrentShowCastData } from './icurrent-show-data';
+import { ICurrentShowData, IFrontPageData, ICurrentShowCastData, ICurrentShowEpisodesData } from './icurrent-show-data';
 import { environment } from 'src/environments/environment';
-import { ICurrentShow, ICurrentShowCast} from './icurrent-show';
+import { ICurrentShow, ICurrentShowCast, ICurrentShowEpisodes} from './icurrent-show';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { IShowService } from './ishow-service';
 import { IFrontPage } from './icurrent-show';
-import { EventEmitter } from 'protractor';
-import { TypeScriptEmitter } from '@angular/compiler';
+
 
 @Injectable({
   providedIn: 'root'
@@ -78,6 +77,34 @@ export class ShowService implements IShowService{
     return array;
   }
 
+  getCurrentShowEpisodes(id: string): Observable<ICurrentShowEpisodes[]>{
+    console.log("Episodes Are in!")
+    return this.httpClient.get<ICurrentShowEpisodesData[]>(
+     `${environment.baseUrl}api.tvmaze.com/shows/${id}/seasons`
+     ).pipe(map(data => this.transformToICurrentShowEpisodes(data)))
+   } 
+
+  private transformToICurrentShowEpisodes(data: ICurrentShowEpisodesData[]) : ICurrentShowEpisodes[] {
+    //console.log(data);
+
+    let array = new Array()
+    for (let i = 0; i < data.length; i++){
+      array.push( new Object({
+        number: data[i].number,
+        name: data[i].name,
+        episodeOrder: (!data[i].episodeOrder) ? "-" : data[i].episodeOrder,
+        premiereDate: data[i].premiereDate.substring(0, 4),
+        endDate: data[i].endDate.substring(0, 4)
+      }))
+    }
+    return array;
+  }
+
+
+
+
+
+
   getFrontPageShows(): Observable<IFrontPage[]>{
     
     return this.httpClient.get<IFrontPageData[]>(
@@ -112,6 +139,5 @@ export class ShowService implements IShowService{
     return array 
     
   }
-
  
 }

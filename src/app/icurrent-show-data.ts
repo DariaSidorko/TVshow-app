@@ -51,6 +51,16 @@ export interface ICurrentShowCastData {
  }
 }
 
+
+export interface ICurrentShowEpisodesData{        
+  number: number,
+  name: string,
+  episodeOrder: number,
+  premiereDate: string,
+  endDate: string
+}
+
+
 export interface IFrontPageData {
   airtime: string, 
   airstamp: string,
