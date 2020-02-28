@@ -25,7 +25,7 @@ export interface ICurrentShowCast {
   characterImage: string
 }
 
-export interface ICurrentShowEpisodes {
+export interface ICurrentShowSeasons {
   number: number,
   name: string,
   episodeOrder: number,

@@ -52,7 +52,7 @@ export interface ICurrentShowCastData {
 }
 
 
-export interface ICurrentShowEpisodesData{        
+export interface ICurrentShowSeasonsData{        
   number: number,
   name: string,
   episodeOrder: number,

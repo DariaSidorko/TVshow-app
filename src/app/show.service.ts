@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { ICurrentShowData, IFrontPageData, ICurrentShowCastData, ICurrentShowEpisodesData } from './icurrent-show-data';
+import { ICurrentShowData, IFrontPageData, ICurrentShowCastData, ICurrentShowSeasonsData } from './icurrent-show-data';
 import { environment } from 'src/environments/environment';
-import { ICurrentShow, ICurrentShowCast, ICurrentShowEpisodes} from './icurrent-show';
+import { ICurrentShow, ICurrentShowCast, ICurrentShowSeasons} from './icurrent-show';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { IShowService } from './ishow-service';
@@ -77,14 +77,14 @@ export class ShowService implements IShowService{
     return array;
   }
 
-  getCurrentShowEpisodes(id: string): Observable<ICurrentShowEpisodes[]>{
+  getCurrentShowSeasons(id: string): Observable<ICurrentShowSeasons[]>{
     console.log("Episodes Are in!")
-    return this.httpClient.get<ICurrentShowEpisodesData[]>(
+    return this.httpClient.get<ICurrentShowSeasonsData[]>(
      `${environment.baseUrl}api.tvmaze.com/shows/${id}/seasons`
-     ).pipe(map(data => this.transformToICurrentShowEpisodes(data)))
+     ).pipe(map(data => this.transformToICurrentShowSeasons(data)))
    } 
 
-  private transformToICurrentShowEpisodes(data: ICurrentShowEpisodesData[]) : ICurrentShowEpisodes[] {
+  private transformToICurrentShowSeasons(data: ICurrentShowSeasonsData[]) : ICurrentShowSeasons[] {
     //console.log(data);
 
     let array = new Array()
@@ -99,10 +99,6 @@ export class ShowService implements IShowService{
     }
     return array;
   }
-
-
-
-
 
 
   getFrontPageShows(): Observable<IFrontPage[]>{
