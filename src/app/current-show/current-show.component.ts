@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { ICurrentShow, ICurrentShowCast, ICurrentShowEpisodes } from '../icurrent-show';
+import { ICurrentShow, ICurrentShowCast, ICurrentShowSeasons } from '../icurrent-show';
 import { ShowService } from '../show.service';
 
 
@@ -12,7 +12,7 @@ import { ShowService } from '../show.service';
 export class CurrentShowComponent implements OnInit {
   @Input() currents: ICurrentShow[]
   cast: ICurrentShowCast[]
-  seasons: ICurrentShowEpisodes[]
+  seasons: ICurrentShowSeasons[]
   details: ICurrentShow;
 
   constructor(private showService: ShowService) {}
@@ -27,7 +27,7 @@ export class CurrentShowComponent implements OnInit {
     // for SURRY: you can pass this.showDetails.id in this **getCurrentShowCast** call and change URL and mapping accordingly.
   //this.currentShowEvent.emit(showDetailst.name);
 
-  this.showService.getCurrentShowEpisodes(showDetails.id).subscribe(data => this.seasons = data);    
+  this.showService.getCurrentShowSeasons(showDetails.id).subscribe(data => this.seasons = data);    
   console.log("Episodes Are out!")
   }
 
