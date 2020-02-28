@@ -13,6 +13,7 @@
 
 .grid-container{
   display: grid;
+  justify-content: center;
   grid-template-columns: auto auto auto auto auto;
   grid-gap: 5px;
   padding: 2% 0 2% 0;
@@ -31,13 +32,15 @@
 
 hr{
   border: 1px solid rgba(22,37,48,0.8);
-  margin: 0 1.8% 0 0
+
 }
 
-
+.line{
+  background-color: rgba(255,255,255, 0.2);
+}
 
 .show-img{
-  max-width: 140px;
+  max-width: 135px;
 }
 
 .show-img:hover
@@ -99,6 +102,7 @@ a:hover {
 
 .show-details-card{
   background-color: #162530;
+  margin-right: 2%;
   padding: 5%;
   border-radius: 5px;
 }
@@ -200,3 +204,28 @@ a:hover {
   font-size: 15px;
   font-weight: bold;
 }
+
+/* SEASONS */
+
+.seasons-wrapper{
+  padding-left: 20%;
+}
+
+.seasons-container {
+  display: flex;
+  align-items: stretch; 
+}
+
+.seasons-container > div {
+  width: 100px;
+  margin: 10px;
+  padding-left: 15px;
+  text-align: left;
+  color: #989998;
+}
+
+.seasons-line{
+  background-color: rgba(255,255,255, 0.15);
+  margin: 0 28% 0 1%;
+}
+
