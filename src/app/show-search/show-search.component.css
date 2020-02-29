@@ -23,7 +23,7 @@ input{
 }
 
 input:focus {
-  caret-color: #989998;
+  caret-color: #f2f2f2;
 }
 
 input select {
@@ -36,5 +36,10 @@ mat-icon{
   position: relative;
   bottom: 12px;
   left: 10px;
+  color: #f2f2f2;
+}
+
+input::placeholder {
+  color: #f2f2f2;
 }
 

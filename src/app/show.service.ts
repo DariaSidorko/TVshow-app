@@ -132,7 +132,7 @@ export class ShowService implements IShowService{
 
     array.sort((a, b) => a.rating > b.rating ? -1 : a.rating < b.rating ? 1 : 0);
 
-    return array 
+    return array; 
     
   }
  
