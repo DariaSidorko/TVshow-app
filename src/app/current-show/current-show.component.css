@@ -1,7 +1,7 @@
 .show-component{
   /* font-family: Lato; */
   background-color: #0c151d; 
-  padding: 0 15% 0 15%;
+  padding: 0 5% 0 5%;
 }
 
 .search-result-card{
@@ -14,7 +14,7 @@
 .grid-container{
   display: grid;
   justify-content: center;
-  grid-template-columns: auto auto auto auto auto;
+  grid-template-columns: auto auto auto auto auto auto auto auto auto auto;
   grid-gap: 5px;
   padding: 2% 0 2% 0;
 
@@ -27,7 +27,7 @@
   font-weight: bold;
   padding: 2% 0 0.5% 0;
   font-weight: 600;
-  color: #989998;
+  color: #f2f2f2;
 }
 
 hr{
@@ -40,18 +40,20 @@ hr{
 }
 
 .show-img{
-  max-width: 130px;
+  max-width: 145px;
+  transition: .5s ease;
+  backface-visibility: hidden;
 }
 
 .show-img:hover
 {
-        -webkit-transform: scale(1.05);
-        -ms-transform: scale(1.05);
-        transform: scale(1.05);
+        -webkit-transform: scale(1.1);
+        -ms-transform: scale(1.1);
+        transform: scale(1.1);
 }
 
 .item1{
-  max-width: 140px; 
+  /*max-width: 140px; */
   text-align: left;
   margin: 10px;
 }
@@ -84,12 +86,66 @@ hr{
 }
 .official-site-link{
   text-decoration: none;
-  color: #5e849e;
+  color: #9a9997;
 }
 
 a:hover {
   color: #9ec5e0;
 }
+
+
+@media (min-width: 1201px) and (max-width: 1500px) {
+  .grid-container{
+    display: grid;
+    justify-content: center;
+    grid-template-columns: auto auto auto auto auto auto auto;
+    grid-gap: 5px;
+    padding: 2% 0 2% 0;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1200px) {
+  .grid-container{
+    display: grid;
+    justify-content: center;
+    grid-template-columns: auto auto auto auto auto ;
+    grid-gap: 5px;
+    padding: 2% 0 2% 0;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .grid-container{
+    display: grid;
+    justify-content: center;
+    grid-template-columns: auto auto auto auto;
+    grid-gap: 5px;
+    padding: 2% 0 2% 0;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 767px) {
+  .grid-container{
+    display: grid;
+    justify-content: center;
+    grid-template-columns: auto auto auto;
+    grid-gap: 5px;
+    padding: 2% 0 2% 0;
+  }
+}
+
+@media (max-width: 599px) {
+  .grid-container{
+    display: grid;
+    justify-content: center;
+    grid-template-columns: auto auto;
+    grid-gap: 5px;
+    padding: 2% 0 2% 0;
+  }
+}
+
+
+
 
 
 /* SHOW DETAILS */
@@ -116,7 +172,7 @@ a:hover {
 .item2-details {
   text-align: left;
   padding: 0.5% 5% 0 5%;
-  color: #989998;
+  color: #f2f2f2;
 }
 
 .show-img-details{
@@ -132,7 +188,7 @@ a:hover {
   padding: 0% 0 3% 0;
   font-weight: 600;
   padding: 0 0 3% 0;
-  color: #e7e7e7;
+  color: #f2f2f2;
 }
 
 .show-details-span{
@@ -166,7 +222,7 @@ a:hover {
   text-align: left;
   padding: 2% 0 0.5% 0;
   font-weight: 600;
-  color: #e7e7e7;
+  color: #f2f2f2;
 }
 
  .grid-container-cast {
@@ -204,16 +260,26 @@ a:hover {
 
 .character-link {
   text-decoration: none;
-  color: #81807e;
+  color: #9a9997;
   font-size: 15px;
   /*font-weight: bold;*/
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1600px) {
   .grid-container-cast {
     display: grid;
     justify-content: center;
-    grid-template-columns: auto auto auto auto;
+    grid-template-columns: auto auto auto auto auto auto auto;
+    grid-gap: 15px;
+    padding: 0 3% 5% 7%;
+  }
+}
+
+@media (min-width: 1200px) and (max-width: 1599px) {
+  .grid-container-cast {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: auto auto auto auto auto;
     grid-gap: 10px;
     padding: 0 3% 5% 7%;
   }
@@ -223,17 +289,27 @@ a:hover {
   .grid-container-cast {
     display: grid;
     justify-content: center;
-    grid-template-columns: auto auto auto;
+    grid-template-columns: auto auto auto auto;
     grid-gap: 10px;
     padding: 0 3% 5% 7%;
   }
 }
 
-@media (max-width: 800px) {
+@media (min-width: 551px) and (max-width: 800px) {
   .grid-container-cast {
     display: grid;
     justify-content: center;
     grid-template-columns: auto auto;
+    grid-gap: 10px;
+    padding: 0 3% 5% 7%;
+  }
+}
+
+@media (max-width: 550px) {
+  .grid-container-cast {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: auto;
     grid-gap: 10px;
     padding: 0 3% 5% 7%;
   }
@@ -255,7 +331,7 @@ a:hover {
   margin: 10px;
   padding-left: 15px;
   text-align: left;
-  color: #989998;
+  color: #f2f2f2;
 }
 
 .seasons-line{
