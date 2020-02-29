@@ -54,24 +54,24 @@ export class ShowService implements IShowService{
   return array 
 }
 
-  getCurrentShowCast(search: string): Observable<ICurrentShowCast[]>{
-    return this.httpClient.get<ICurrentShowCastData>(
-     `${environment.baseUrl}api.tvmaze.com/singlesearch/shows?q=${search}&embed=cast`
+  getCurrentShowCast(id: string): Observable<ICurrentShowCast[]>{
+    return this.httpClient.get<ICurrentShowCastData[]>(
+     `${environment.baseUrl}api.tvmaze.com/shows/${id}/cast`
      ).pipe(map(data => this.transformToICurrentShowCast(data)))
    } 
 
-  private transformToICurrentShowCast(data: ICurrentShowCastData) : ICurrentShowCast[] {
+  private transformToICurrentShowCast(data: ICurrentShowCastData[]) : ICurrentShowCast[] {
     //console.log(data);
 
     let array = new Array()
-    for (let i = 0; i < data._embedded.cast.length; i++){
+    for (let i = 0; i < data.length; i++){
       array.push( new Object({
-        castName: data._embedded.cast[i].person.name,
-        castURL: data._embedded.cast[i].person.url,
-        castImage: data._embedded.cast[i].person.image.medium,
-        characterName: data._embedded.cast[i].character.name,
-        characterURL: data._embedded.cast[i].character.url,
-        characterImage: data._embedded.cast[i].character.image.medium
+        castName: data[i].person.name,
+        castURL: data[i].person.url,
+        castImage: data[i].person.image.medium,
+        characterName: data[i].character.name,
+        characterURL: data[i].character.url,
+        characterImage: data[i].character.image.medium
       }))
     }
     return array;
