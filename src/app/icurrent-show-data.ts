@@ -29,26 +29,20 @@ export interface ICurrentShowData {
 }
 
 export interface ICurrentShowCastData {
-  _embedded: {
-    cast: [
-      {
-      person: {
-        name: string,
-        url: string,
-        image: {
-          medium: string
-        }
-      }
-      character: {
-        name: string,
-        url: string,
-        image: {
-          medium: string
-        }
-      }
+  person: {
+    name: string,
+    url: string,
+    image: {
+      medium: string
     }
-  ]
- }
+  }
+  character: {
+    name: string,
+    url: string,
+    image: {
+      medium: string
+    }
+  }
 }
 
 

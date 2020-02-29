@@ -61,10 +61,12 @@
     
       <div class="grid-container-cast"> 
   
-        <div class="item1-cast" *ngFor="let member of cast | slice:0:4">
+        <div class="item1-cast" *ngFor="let member of cast | slice:0:30">
           
           <div class="cast-member">
+            <div class="image-cropper">
           <img [src]='member.castImage' class="show-img-cast"/>
+            </div>
           <div>
             <a class="cast-link" [href]='member.castURL' target="_blank">{{member.castName}}</a>
           </div>

@@ -23,7 +23,7 @@ export class CurrentShowComponent implements OnInit {
   fireEvent(showDetails){
     //console.log(showDetails.id);
     this.details = showDetails;
-    this.showService.getCurrentShowCast(showDetails.name).subscribe(data => this.cast = data);
+    this.showService.getCurrentShowCast(showDetails.id).subscribe(data => this.cast = data);
     // for SURRY: you can pass this.showDetails.id in this **getCurrentShowCast** call and change URL and mapping accordingly.
   //this.currentShowEvent.emit(showDetailst.name);
 
