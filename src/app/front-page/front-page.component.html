@@ -3,7 +3,7 @@
   <div class="shows-title"> Today's News</div>
   <hr class="line">
   <div class="grid-container"  *ngIf="news"> 
-    <div class="item1" *ngFor="let new of news | slice:0:10" >
+    <div class="item1" *ngFor="let new of news | slice:0:7" >
       <div class="show-container">
         <a class="official-site-link" (click) = "fireEvent(new)" (click)="toggleShowNews()"> <img [src]='new.image' class="show-img"/> </a>
         <!-- <div class="show-details">
@@ -44,7 +44,7 @@
   <div class="shows-title"> Today's Reality Shows</div>
   <hr class="line">
   <div class="grid-container"  *ngIf="reality"> 
-    <div class="item1" *ngFor="let real of reality | slice:0:10" >
+    <div class="item1" *ngFor="let real of reality | slice:0:7" >
       <a class="official-site-link" (click) = "fireEvent(real)" (click)="toggleShowReality()"> <img [src]='real.image' class="show-img"/> </a>
       <!-- <div class="show-details">
         <div class="show-name">{{real.name}}</div>
@@ -83,7 +83,7 @@
   <div class="shows-title"> Today's Documentary Shows</div>
   <hr class="line">
   <div class="grid-container"  *ngIf="documentaries"> 
-    <div class="item1" *ngFor="let documentary of documentaries | slice:0:10" >
+    <div class="item1" *ngFor="let documentary of documentaries | slice:0:7" >
       <a class="official-site-link" (click) = "fireEvent(documentary)" (click)="toggleShowDocumentary()"> <img [src]='documentary.image' class="show-img"/> </a>
       <!-- <div class="show-details">
         <div class="show-name">{{documentary.name}}</div>

@@ -2,10 +2,10 @@
 <div  class="show-component"  ng-app="app" ng-controller="controllerName" *ngIf="currents">
   
   <div class="search-result-card">
-    <div class="shows-title"> Search Results</div>
-    <hr class="line">
+    <!-- <div class="shows-title"> Search Results</div>
+    <hr class="line"> -->
     <div class="grid-container"> 
-      <div class="item1" *ngFor="let current of currents | slice:0:10" >
+      <div class="item1" *ngFor="let current of currents | slice:0:7" >
         <a (click) = "fireEvent(current)" (click)="toggleShow()"> <img [src]='current.image' class="show-img"/> </a>
         <!-- <div class="show-details">
           <div class="show-name">{{current.name}}</div>
