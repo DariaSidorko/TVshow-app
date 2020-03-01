@@ -161,6 +161,9 @@ a:hover {
     grid-gap: 5px;
     padding: 2% 0 2% 0;
   }
+  .show-name-details{
+    font-size: 24px;
+  }
 }
 
 @media (min-width: 600px) and (max-width: 767px) {
@@ -171,6 +174,9 @@ a:hover {
     grid-gap: 5px;
     padding: 2% 0 2% 0;
   }
+  .show-name-details{
+    font-size: 22px;
+  }
 }
 
 @media (max-width: 599px) {
@@ -180,5 +186,8 @@ a:hover {
     grid-template-columns: auto auto;
     grid-gap: 5px;
     padding: 2% 0 2% 0;
+  }
+  .show-name-details{
+    font-size: 20px;
   }
 }

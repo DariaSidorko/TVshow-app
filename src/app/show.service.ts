@@ -66,12 +66,12 @@ export class ShowService implements IShowService{
     let array = new Array()
     for (let i = 0; i < data.length; i++){
       array.push( new Object({
-        castName: data[i].person.name,
-        castURL: data[i].person.url,
-        castImage: data[i].person.image.medium,
-        characterName: data[i].character.name,
-        characterURL: data[i].character.url,
-        characterImage: data[i].character.image.medium
+        castName: data[i].person.name ? data[i].person.name : "",
+        castURL: data[i].person.url ? data[i].person.url : "",
+        castImage: data[i].person.image ? data[i].person.image.medium : "../../assets/image-coming-soon.jpg",
+        characterName: data[i].character.name ? data[i].character.name : "",
+        characterURL: data[i].character.url ? data[i].character.url : "",
+        characterImage: data[i].character.image ? data[i].character.image.medium : "",
       }))
     }
     return array;
