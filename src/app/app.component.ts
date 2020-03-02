@@ -18,7 +18,6 @@ export class AppComponent {
   constructor(private showService: ShowService){}
 
   doSearch(searchValue){
-    //const userInput = searchValue.trim;
     this.showService.getCurrentShow(
       searchValue.length > 1 ? searchValue : undefined). 
       subscribe(data => this.currentShow = data); 

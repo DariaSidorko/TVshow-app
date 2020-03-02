@@ -1,12 +1,9 @@
 .show-component{
-  /* font-family: Lato; */
   background-color: #0c151d; 
-  padding: 0 15% 0 15%;
+  padding: 0 5% 0 5%;
 }
 
 .search-result-card{
-  /* background-color: #162530; 
-  padding: 1% 2% 1% 2%;*/
   border-radius: 5px;
   margin-top: 5%;
 }
@@ -39,7 +36,7 @@ hr{
 }
 
 .show-img{
-  max-width: 145px;
+  max-width: 130px;
   transition: .5s ease;
   backface-visibility: hidden;
 }
@@ -52,31 +49,9 @@ hr{
 }
 
 .item1{
-  /*max-width: 140px; */
   text-align: left;
   margin: 10px;
 }
-
-
-
-/* .grid-container{
-  display: grid;
-  grid-template-columns: auto auto auto auto;
-  grid-template-rows: [row1-start] auto [row1-end row2-start] auto [row2-end];
-  grid-template-areas: 
-    "show show show show"
-    "cast cast cast cast";
-  grid-gap: 10px;
-  padding: 4% 15% 0 18%;
-}
-.grid-container{
-  display: grid;
-  grid-template-columns: auto auto auto auto auto auto;
-  grid-gap: 5px;
-  padding: 2% 0 2% 0;
-
-}
-*/
 
 .storyline{
   margin-bottom: -8px;
@@ -152,6 +127,7 @@ a:hover {
 .show-details-card{
   background-color: #162530;
   margin-right: 2%;
+  margin: 0% 10% 0% 10%;
   padding: 5%;
   border-radius: 5px;
 }
@@ -170,8 +146,10 @@ a:hover {
 }
 .item2-details {
   text-align: left;
-  padding: 0.5% 5% 0 5%;
+  padding: 0.3% 5% 0 5%;
   color: rgba(255,255,255,0.8);
+  font-weight: 300;
+  font-size: 14px;
 }
 
 .show-img-details{
@@ -227,7 +205,7 @@ a:hover {
  .grid-container-cast {
   display: grid;
   justify-content: center;
-  grid-template-columns: auto auto auto auto auto;
+  grid-template-columns: auto auto auto auto auto auto;
   grid-gap: 10px;
   padding: 0 3% 5% 7%;
  }
@@ -237,31 +215,28 @@ a:hover {
 }
 
 .image-cropper {
-  width: 150px;
-  height: 150px;
+  width: 120px;
+  height: 120px;
   overflow: hidden;
   border-radius: 50%;
   margin-bottom: 15px;
 }
 
 .show-img-cast {
-  max-height: 210px;
+  max-height: 170px;
   margin: 0 auto;
-  /*margin-left: -5%;*/
 }
 
 .cast-link {
   text-decoration: none;
   color: #9ec5e0;
-  font-size: 16px;
-  /*font-weight: bold;*/
+  font-size: 14px;
 }
 
 .character-link {
   text-decoration: none;
   color: rgba(255,255,255,0.8);
-  font-size: 15px;
-  /*font-weight: bold;*/
+  font-size: 14px;
 }
 
 @media (min-width: 1600px) {
@@ -278,7 +253,7 @@ a:hover {
   .grid-container-cast {
     display: grid;
     justify-content: center;
-    grid-template-columns: auto auto auto auto;
+    grid-template-columns: auto auto auto auto auto;
     grid-gap: 10px;
     padding: 0 3% 5% 7%;
   }
@@ -349,7 +324,7 @@ a:hover {
   margin: 10px;
   padding-left: 15px;
   text-align: left;
-  color: #f2f2f2;
+  color: rgba(255,255,255,0.8);;
 }
 
 .seasons-line{

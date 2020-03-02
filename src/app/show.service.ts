@@ -15,22 +15,19 @@ import { IFrontPage } from './icurrent-show';
 export class ShowService implements IShowService{
   constructor (private httpClient: HttpClient) { }
 
+// Search API call
+
   getCurrentShow(search: string): Observable<ICurrentShow[]>{
     
     return this.httpClient.get<ICurrentShowData[]>(
       `${environment.baseUrl}api.tvmaze.com/search/shows?q=${search}&embed=cast`
       ).pipe(map(data => this.transformToICurrentShow(data)))
     }
-    //&embed=cast
 
   private transformToICurrentShow(data: ICurrentShowData[]) : ICurrentShow[]{
     
-    //console.log(data);
-    
     let array = new Array();
     for (let i = 0; i < data.length; i++){
-      //console.log(i); 
-      //console.log(data[i]); 
 
       array.push( new Object({
         id: data[i].show.id,
@@ -51,8 +48,10 @@ export class ShowService implements IShowService{
     }))
 
   }
-  return array 
+  return array;
 }
+
+//  Show Cast API call
 
   getCurrentShowCast(id: string): Observable<ICurrentShowCast[]>{
     return this.httpClient.get<ICurrentShowCastData[]>(
@@ -85,8 +84,6 @@ export class ShowService implements IShowService{
    } 
 
   private transformToICurrentShowSeasons(data: ICurrentShowSeasonsData[]) : ICurrentShowSeasons[] {
-    //console.log(data);
-
     let array = new Array()
     for (let i = 0; i < data.length; i++){
       array.push( new Object({
@@ -100,6 +97,7 @@ export class ShowService implements IShowService{
     return array;
   }
 
+// Schedule API call to populate the front page
 
   getFrontPageShows(): Observable<IFrontPage[]>{
     
@@ -110,7 +108,6 @@ export class ShowService implements IShowService{
     }
 
   private transformToIFrontPage(data: IFrontPageData[]) : IFrontPage[] {  
-    //console.log(data[0].show.webChannel.name);
     let array = new Array();
     
     for (let i = 0; i < data.length; i++){
@@ -130,7 +127,21 @@ export class ShowService implements IShowService{
       }))
     }
 
+    // Sorting by the rating
+
     array.sort((a, b) => a.rating > b.rating ? -1 : a.rating < b.rating ? 1 : 0);
+
+    // Checking for show repetition (in case same show appears several time on TV through the day)
+    let temp;
+    for (let i = 0; i < array.length -1; i++){
+      temp = array[i];
+      for (let j = i + 1; j < array.length; j++){
+        if (array[i].name == array[j].name){
+          array[i].airtime = array[i].airtime  + "  and  " +  array[j].airtime; 
+          array.splice(j, 1);
+        }
+      }
+    }
 
     return array; 
     

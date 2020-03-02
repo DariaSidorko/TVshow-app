@@ -23,10 +23,7 @@ export class FrontPageComponent implements OnInit {
   ngOnInit() {
     this.frontService.getFrontPageShows().subscribe(data =>{
       let newsCount = 0, realityCount = 0, documentaryCount  = 0;
-      /*
-      let dateTime = new Date();
-      let time =dateTime.toJSON();
-      */
+
       for (let i = 0; i < data.length; i++){
         if (data[i].type === 'News') {
           this.news[newsCount] = data[i];
@@ -39,8 +36,6 @@ export class FrontPageComponent implements OnInit {
           documentaryCount++;
         }
       }
-
-      //array.sort((a, b) => a.time > b.time ? -1 : a.time < b.time ? 1 : 0);
 
     } );
   }

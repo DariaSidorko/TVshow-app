@@ -1,6 +1,6 @@
 
 .show-component{
-  padding: 0 15% 0 15%;
+  padding: 0 5% 0 7%;
 }
 
 .shows-title{
@@ -8,7 +8,7 @@
   text-align: left;
   font-size: 20px;
   font-weight: bold;
-  padding: 2% 2% 0.5% 2%;
+  padding: 2% 2% 0.5% 1%;
   font-weight: 600;
   color: #ffffff;
 }
@@ -68,6 +68,7 @@ hr{
 .show-details-card{
   background-color: #162530;
   padding: 5%;
+  margin: 0 7% 0 3%;
   border-radius: 5px;
 }
 
